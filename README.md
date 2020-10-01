@@ -22,11 +22,20 @@ ___
 
 There is a urge necessity to use **Embedding Layer** in neural network to do text classification. To understand why, hit this [Medium](https://towardsdatascience.com/deep-learning-4-embedding-layers-f9a02d55ac12) article. 
 
-## Conv-Text-Classification
+## Neural_Netword_classification
 
  - Convolutional Neural Network in action to do text classification.
  - Layers: Embedding&#8594;Conv1D&#8594;MaxPooling1D&#8594;Conv1D&#8594;MaxPooling1D&#8594;LSTM&#8594;Dense
  - ***softmax*** activatation is used in the last layer to do a normalized probability distribution among multiple classes.
+ - Data Label
+   ```
+   1- Traffic Jam
+   2- No Traffic Jam
+   3- Road Condition
+   6- Accident
+   7- Fire
+
+   ````
  
 ## NER-Python
 
