@@ -41,7 +41,7 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
  - The program analyses the given String and look up different prepositions in order to find a valid location name
 
 
-## Neural_Network_classification
+## Neural_Network_Classification
 
  - ***neural_network_conv.py*** contains source code on **Convolutional Neural Network** in action to do text classification. Layers: Embedding &#8594; Conv1D &#8594; MaxPooling1D &#8594; Conv1D &#8594; MaxPooling1D &#8594; LSTM &#8594; Dense.
  - ***neural_network_dense.py*** contains source code on a very **simple** neural network in action to do text classification. Layers: Dense 256 neurons &#8594; Dense 10 neurons. Very fast to do text classification. No batch.
