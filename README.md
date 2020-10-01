@@ -26,4 +26,10 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
 
  - Convolutional Neural Network in action to do text classification.
  - Layers: Embedding&#8594;Conv1D&#8594;MaxPooling1D&#8594;Conv1D&#8594;MaxPooling1D&#8594;LSTM&#8594;Dense
- - ***softmax*** activatation is used to do a normalized probability distribution among multiple classes.
+ - ***softmax*** activatation is used in the last layer to do a normalized probability distribution among multiple classes.
+ 
+## NER-Python
+
+ - An NER system using preposition to extract location from social media posts.
+ - Layers: Embedding&#8594;Conv1D&#8594;MaxPooling1D&#8594;Conv1D&#8594;MaxPooling1D&#8594;LSTM&#8594;Dense
+ - ***softmax*** activatation is used in the last layer to do a normalized probability distribution among multiple classes.
