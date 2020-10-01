@@ -1,6 +1,3 @@
-
-
-
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0' # 0 = GPU use; -1 = CPU use
 
