@@ -54,6 +54,14 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
  - For a complex neural tranlator the layer is: Bidirectional &#8594; TimeDistributed &#8594; Dropout &#8594; TimeDistributed .
  - No hot encoding.
  - However achieved very poor performance due to lack of translation data. Only 400 data are available.
+  
+## Road-Condition-Analysis
+
+ - This is research based project that is **IEEE ICCIT 2020**.
+ - The research is based on road condition analyses of Dhaka city from social media posts.
+ - ***machine_classification.py***  contains source code of road condition anaylsis using differen machine learning algorthims such as **MultinomialNB**, **LogisticRegression**, **KNeighborsClassifier**
+ - No hot encoding.
+ - However achieved very poor performance due to lack of translation data. Only 400 data are available.
 
 
  
