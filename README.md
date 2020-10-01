@@ -24,8 +24,8 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
 
 ## Neural_Network_classification
 
- - ***neural_network_conv.py*** contains source code on Convolutional Neural Network in action to do text classification. Layers: Embedding &#8594; Conv1D &#8594; MaxPooling1D &#8594; Conv1D &#8594; MaxPooling1D &#8594; LSTM &#8594;Dense
- - 
+ - ***neural_network_conv.py*** contains source code on Convolutional Neural Network in action to do text classification. Layers: Embedding &#8594; Conv1D &#8594; MaxPooling1D &#8594; Conv1D &#8594; MaxPooling1D &#8594; LSTM &#8594; Dense.
+ - ***neural_network_dense.py*** contains source code on a very simple neural network in action to do text classification. Layers: Dense 256 neurons &#8594; Dense 10 neurons. Very fast to do text classification. No batch.
  - ***softmax*** activatation is used in the last layer to do a normalized probability distribution among multiple classes.
  - Data Labels
  
