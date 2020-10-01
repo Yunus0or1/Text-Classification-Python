@@ -85,8 +85,8 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
    CBT  = Character Based Tokenization
    ACBD = Advance Character Based Tokenization
    
-   NON Saved Model processing = Starts from ground up training, evaluation and then predict the new word
-   Saved Model processing = Loading pre trained model weights and predict the new word
+   NON Saved Model processing = Ground up training, evaluation and predict new wrong word
+   Saved Model processing = Loading pre trained model weights and predict new wrong word
    ```
 
 
