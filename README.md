@@ -57,11 +57,10 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
   
 ## Road-Condition-Analysis
 
- - This is research based project that is **IEEE ICCIT 2020**.
+ - This is research based project. The paper is submitted to **IEEE ICCIT 2020**.
  - The research is based on road condition analyses of Dhaka city from social media posts.
- - ***machine_classification.py***  contains source code of road condition anaylsis using differen machine learning algorthims such as **MultinomialNB**, **LogisticRegression**, **KNeighborsClassifier**
- - No hot encoding.
- - However achieved very poor performance due to lack of translation data. Only 400 data are available.
+ - ***machine_classification.py***  contains source code of road condition anaylsis using different machine learning algorthims such as **MultinomialNB**, **LogisticRegression**, **KNeighborsClassifier**
+  - ***nueraul_classification.py***  contains source code of road condition anaylsis using neural network.
 
 
  
