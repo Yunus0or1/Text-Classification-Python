@@ -20,6 +20,8 @@ ___
 > Source code explanations
 ___
 
+There is a urge necessity to use **Embedding Layer** in neural network to do text classification. To understand why, hit this [Medium](https://towardsdatascience.com/deep-learning-4-embedding-layers-f9a02d55ac12) article. 
+
 ## Conv-Text-Classification
 
  - Convolutional Neural Network in action to do text classification.
