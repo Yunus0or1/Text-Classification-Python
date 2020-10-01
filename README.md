@@ -22,8 +22,8 @@ These are all **Python** files.
 ```
 Install Python3 or Python2.7 
 Open CMD
-Go to directory path
-Write ***python3 <filename.py>***
+Go to directory path and write below command
+python3 <filename.py>
 ```
 
 ___
