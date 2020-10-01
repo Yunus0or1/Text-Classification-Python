@@ -53,6 +53,7 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
  - For a simple neural tranlator the layer is: GRU &#8594; TimeDistributed &#8594; Dropout &#8594; TimeDistributed .
  - For a complex neural tranlator the layer is: Bidirectional &#8594; TimeDistributed &#8594; Dropout &#8594; TimeDistributed .
  - No hot encoding.
+ - However achieved very poor performance due to lack of translation data. Only 400 data are available.
 
 
  
