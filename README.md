@@ -61,6 +61,15 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
  - The research is based on road condition analyses of Dhaka city from social media posts.
  - ***machine_classification.py***  contains source code of road condition anaylsis using different machine learning algorthims such as **MultinomialNB**, **LogisticRegression**, **KNeighborsClassifier**
   - ***nueraul_classification.py***  contains source code of road condition anaylsis using neural network. This procedure is similar to ***Neural_Network_classification*** problems.
+  
+  
+## Wrong_Word_Correction
+
+ - This is research based project that has been published. Hit this [Journal](http://www.ijcaonline.org/archives/volume176/number27/31370-2020920288 ) to get details on this project.
+ - For a simple neural tranlator the layer is: GRU &#8594; TimeDistributed &#8594; Dropout &#8594; TimeDistributed .
+ - For a complex neural tranlator the layer is: Bidirectional &#8594; TimeDistributed &#8594; Dropout &#8594; TimeDistributed .
+ - No hot encoding.
+ - However achieved very poor performance due to lack of translation data. Only 400 data are available.
 
 
  
