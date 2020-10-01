@@ -7,24 +7,21 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, classification_report, confusion_matrix
-from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score, classification_report
 
 
 def covert_to_wrong_word_and_character_position(wrong_word):
-
     temp_wrong_word = ""
     for i in range(0, len(wrong_word)):
         if i < (len(wrong_word) - 1):
-            temp_wrong_word = temp_wrong_word + wrong_word[i] + wrong_word[i] + ' ' + wrong_word[i]  + str(i) + ' '
+            temp_wrong_word = temp_wrong_word + wrong_word[i] + wrong_word[i] + ' ' + wrong_word[i] + str(i) + ' '
         else:
-            temp_wrong_word = temp_wrong_word + wrong_word[i] + wrong_word[i] + ' ' + wrong_word[i]  + str(i)
+            temp_wrong_word = temp_wrong_word + wrong_word[i] + wrong_word[i] + ' ' + wrong_word[i] + str(i)
 
     return temp_wrong_word
 
 
 def covert_to_wrong_word_and_no_character_position(wrong_word):
-
     temp_wrong_word = ""
     for i in range(0, len(wrong_word)):
         if i < (len(wrong_word) - 1):
@@ -45,21 +42,18 @@ def get_all_predictions(model_classes, predictions):
 
 
 def predict_data(choice, wrong_word, main_word):
-
     url = "mldata.txt"
-    column_names = ['wbt','cbt','acbt','correct_word']
+    column_names = ['wbt', 'cbt', 'acbt', 'correct_word']
     dataset = pandas.read_csv(url, names=column_names)
 
-    if(choice == '1'):
+    if (choice == '1'):
         dataset_x = dataset["wbt"].values.astype('U')
-    elif(choice == '2'):
+    elif (choice == '2'):
         dataset_x = dataset["cbt"].values.astype('U')
-    elif(choice == '3'):
+    elif (choice == '3'):
         dataset_x = dataset["acbt"].values.astype('U')
 
     dataset_y = dataset["correct_word"].values.astype('U')
-
-
 
     cv = TfidfVectorizer(stop_words='english')
 
@@ -74,19 +68,18 @@ def predict_data(choice, wrong_word, main_word):
     print(feature_names)
     print("Total Features: " + str(len(feature_names)))
 
-
     models = []
     models.append(('KNN', KNeighborsClassifier()))
-    models.append(('MNB',MultinomialNB()))
+    models.append(('MNB', MultinomialNB()))
     models.append(('CART', DecisionTreeClassifier()))
-    models.append(('RFC', RandomForestClassifier(n_estimators= 5)))
-    models.append(('LRNew', LogisticRegression(solver='liblinear',multi_class='ovr')))
+    models.append(('RFC', RandomForestClassifier(n_estimators=5)))
+    models.append(('LRNew', LogisticRegression(solver='liblinear', multi_class='ovr')))
 
     # evaluate each model in turn
     results = []
     names = []
     for name, model in models:
-        kfold = model_selection.KFold(n_splits=10, random_state=7, shuffle= True)
+        kfold = model_selection.KFold(n_splits=10, random_state=7, shuffle=True)
         cv_results = model_selection.cross_val_score(model, x_train_cv, y_train,
                                                      cv=kfold, scoring='accuracy')
         results.append(cv_results)
@@ -115,9 +108,9 @@ def predict_data(choice, wrong_word, main_word):
         print(class_merge_prediction)
 
 
-def predict_using_saved_model(model_file_name,wrong_word):
+def predict_using_saved_model(model_file_name, wrong_word):
     url = "mldata.txt"
-    names = ['wrong_word', 'custom_wrong_word','correct_word']
+    names = ['wrong_word', 'custom_wrong_word', 'correct_word']
     dataset = pandas.read_csv(url, names=names)
     dataset_x = dataset["custom_wrong_word"].values.astype('U')
     dataset_y = dataset["correct_word"].values.astype('U')
@@ -127,7 +120,7 @@ def predict_using_saved_model(model_file_name,wrong_word):
     cv.fit_transform(x_train)
     wrong_word_tfidf = cv.transform([wrong_word])
 
-    fileName = model_file_name+'.sav'
+    fileName = model_file_name + '.sav'
     loaded_model = pickle.load(open(fileName, 'rb'))
 
     predictions = loaded_model.predict_proba(wrong_word_tfidf)
@@ -137,10 +130,8 @@ def predict_using_saved_model(model_file_name,wrong_word):
     print("prediction is::  " + str(prediction[0]))
 
     print("ALL PREDICTIONS")
-    class_merge_prediction = get_all_predictions(model_classes,predictions)
+    class_merge_prediction = get_all_predictions(model_classes, predictions)
     print(class_merge_prediction)
-
-
 
 
 if __name__ == '__main__':
@@ -155,34 +146,34 @@ if __name__ == '__main__':
     word = input()
     print("Wrong word is: " + word)
 
-    if(choice1 == '1'):
+    if (choice1 == '1'):
         wrong_word = word
         print("1. NON Saved Model processing")
         print("2. Saved Model processing")
 
         choice2 = input()
 
-        if(choice2 == '1'):
-            predict_data(choice1,wrong_word, word)
+        if (choice2 == '1'):
+            predict_data(choice1, wrong_word, word)
         else:
             print("Insert model name")
             model_file_name = input()
-            predict_using_saved_model(model_file_name,wrong_word)
+            predict_using_saved_model(model_file_name, wrong_word)
 
 
-    elif(choice1 == '2'):
+    elif (choice1 == '2'):
         wrong_word = covert_to_wrong_word_and_no_character_position(word)
         print("1. NON Saved Model processing")
         print("2. Saved Model processing")
 
         choice2 = input()
 
-        if(choice2 == '1'):
-            predict_data(choice1,wrong_word, word)
+        if (choice2 == '1'):
+            predict_data(choice1, wrong_word, word)
         else:
             print("Insert model name")
             model_file_name = input()
-            predict_using_saved_model(model_file_name,wrong_word)
+            predict_using_saved_model(model_file_name, wrong_word)
 
     elif (choice1 == '3'):
         wrong_word = covert_to_wrong_word_and_character_position(word)
@@ -192,14 +183,8 @@ if __name__ == '__main__':
         choice2 = input()
 
         if (choice2 == '1'):
-            predict_data(choice1,wrong_word, word)
+            predict_data(choice1, wrong_word, word)
         else:
             print("Insert model name")
             model_file_name = input()
             predict_using_saved_model(model_file_name, wrong_word)
-
-
-
-
-
-

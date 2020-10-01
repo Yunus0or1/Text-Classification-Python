@@ -1,51 +1,11 @@
-import collections
 import pandas
-import os
-import numpy as np
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-from keras.models import Model, Sequential
-from keras.layers import GRU, Input, Dense, TimeDistributed, Activation, RepeatVector,\
-    Bidirectional, Dropout, LSTM
-from keras.layers.embeddings import Embedding
+from keras.models import Sequential
+from keras.layers import Dense
 from keras.optimizers import Adam
 from keras.losses import sparse_categorical_crossentropy
-from tensorflow.python.client import device_lib
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.naive_bayes import GaussianNB
-from sklearn.svm import SVC
-from sklearn.feature_extraction.text import CountVectorizer
-import sys
-import numpy
-import pandas
-from pandas.plotting import scatter_matrix
-import matplotlib.pyplot as plt
 from sklearn import model_selection
-from sklearn.metrics import classification_report
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import accuracy_score
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.naive_bayes import GaussianNB
-from sklearn.svm import SVC
-from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.feature_extraction.text import TfidfVectorizer
-from nltk.stem import PorterStemmer
-from nltk.tokenize import word_tokenize
-import nltk
-from googletrans import Translator
-import datetime
-import mysql.connector
-from django.db import connection
-import MySQLdb
-from tensorflow.python.keras.layers import SpatialDropout1D
+
 
 url = "final_english_data_tagged.txt"
 names = ['message', 'outcome']
