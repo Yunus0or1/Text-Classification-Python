@@ -15,3 +15,11 @@ pip install sklearn
 pip install numpy
 ```
 > There are issues regarding the installation of Tensorflow. To check versioning and other aspects, please click this [link](https://github.com/Yunus0or1/Object-Detection-Python/blob/master/README.md) to make a clear understanding of tensoflow installation guide. 
+
+___
+> Source code explanations
+___
+
+## Conv-Text-Classification
+
+ - Convolutional Neural Network in action to do text classification.
