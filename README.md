@@ -33,3 +33,28 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
  - An NER system using preposition to extract location from social media posts.
  - Uses NLTK library to get the **Parts of Speech** tags and identify place names on three steps.
  - All the POS tags along with a video tutorial can be found in this [link](https://pythonprogramming.net/natural-language-toolkit-nltk-part-speech-tagging/).
+ - The program analyses the given String and look up different prepositions in order to find a valid location name
+ 
+## NER-Python
+
+ - An NER system using preposition to extract location from social media posts.
+ - Uses NLTK library to get the **Parts of Speech** tags and identify place names on three steps.
+ - All the POS tags along with a video tutorial can be found in this [link](https://pythonprogramming.net/natural-language-toolkit-nltk-part-speech-tagging/).
+ - The program analyses the given String and look up different prepositions in order to find a valid location name
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
