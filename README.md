@@ -25,3 +25,4 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
 ## Conv-Text-Classification
 
  - Convolutional Neural Network in action to do text classification.
+ - Layers: Embedding &#8594 Conv1D MaxPooling1D
