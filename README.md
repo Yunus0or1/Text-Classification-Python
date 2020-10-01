@@ -66,10 +66,18 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
 ## Wrong_Word_Correction
 
  - This is research based project that has been published. Hit this [Journal](http://www.ijcaonline.org/archives/volume176/number27/31370-2020920288 ) to get details on this project.
- - For a simple neural tranlator the layer is: GRU &#8594; TimeDistributed &#8594; Dropout &#8594; TimeDistributed .
- - For a complex neural tranlator the layer is: Bidirectional &#8594; TimeDistributed &#8594; Dropout &#8594; TimeDistributed .
- - No hot encoding.
- - However achieved very poor performance due to lack of translation data. Only 400 data are available.
+ - ***wg.py*** contains source code that generates about 80 wrong words from one single **defined** correct word.
+ - ***ml.py*** contains source code that classifies wrong words using different machine learning algorthims such as **MultinomialNB**, **LogisticRegression**, **KNeighborsClassifier**, **RandomForestClassifier** etc.
+ - To be noted, when running the ***ml.py*** program, it prompts for choices. Theses are the meaning
+ 
+   ```
+   WBT  = Word Based Tokenization
+   CBT  = Character Based Tokenization
+   ACBD = Advance Character Based Tokenization
+   
+   NON Saved Model processing = Starts from ground up training, evaluation and then predict the new word
+   Saved Model processing = Loading pre trained model weights and predict the new word
+   ```
 
 
  
