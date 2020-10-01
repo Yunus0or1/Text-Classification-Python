@@ -42,10 +42,10 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
  - ***softmax*** activatation is used to do a normalized probability distribution among multiple classes.
 
 # 2. Usage:
-<p> i. Run the python file (ttt.py) </p>
+<p> i. Run the python file from the directories. </p>
 
 <p> Or type the command in terminal/command prompt: </p>
 
 ```
-python ttt.py
+python _filename_
 ```
