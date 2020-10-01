@@ -78,7 +78,7 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
  - This is research based project that has been published. Hit this [Journal](http://www.ijcaonline.org/archives/volume176/number27/31370-2020920288 ) to get details on this project.
  - ***wg.py*** contains source code that generates about 80 wrong words from one single **defined** correct word.
  - ***ml.py*** contains source code that classifies wrong words using different machine learning algorthims such as **MultinomialNB**, **LogisticRegression**, **KNeighborsClassifier**, **RandomForestClassifier** etc.
- - To be noted, when running the ***ml.py*** program, it prompts for choices. Theses are the meaning
+ - To be noted, when running the ***ml.py*** program, it prompts for choices. Theses are the meaning.
  
    ```
    WBT  = Word Based Tokenization
