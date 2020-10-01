@@ -1,6 +1,6 @@
 # Text-Classification-Python
 
-This repository covers whole range of classification problems using different machine learning algorthims.
+This repository covers whole range of text classification problems using different machine learning algorthims.
 
 # Installation
 The general installation guide to run different projects is provided here. However if any **error** occurs due to missing libraries, please read the error and install the library according to that information.
