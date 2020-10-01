@@ -22,10 +22,20 @@ ___
 
 There is a urge necessity to use **Embedding Layer** in neural network to do text classification. To understand why, hit this [Medium](https://towardsdatascience.com/deep-learning-4-embedding-layers-f9a02d55ac12) article. 
 
+
+## NER-Python
+
+ - An NER system using preposition to extract location from social media posts.
+ - Uses NLTK library to get the **Parts of Speech** tags and identify place names on three steps.
+ - All the POS tags along with a video tutorial can be found in this [link](https://pythonprogramming.net/natural-language-toolkit-nltk-part-speech-tagging/).
+ - The program analyses the given String and look up different prepositions in order to find a valid location name
+
+
 ## Neural_Network_classification
 
- - ***neural_network_conv.py*** contains source code on Convolutional Neural Network in action to do text classification. Layers: Embedding &#8594; Conv1D &#8594; MaxPooling1D &#8594; Conv1D &#8594; MaxPooling1D &#8594; LSTM &#8594; Dense.
- - ***neural_network_dense.py*** contains source code on a very simple neural network in action to do text classification. Layers: Dense 256 neurons &#8594; Dense 10 neurons. Very fast to do text classification. No batch.
+ - ***neural_network_conv.py*** contains source code on **Convolutional Neural Network** in action to do text classification. Layers: Embedding &#8594; Conv1D &#8594; MaxPooling1D &#8594; Conv1D &#8594; MaxPooling1D &#8594; LSTM &#8594; Dense.
+ - ***neural_network_dense.py*** contains source code on a very **simple** neural network in action to do text classification. Layers: Dense 256 neurons &#8594; Dense 10 neurons. Very fast to do text classification. No batch.
+  - ***neural_network_lstm.py*** contains source code on a **LSTM** neural network in action to do text classification. Layers: Embedding &#8594; Dense &#8594; LSTM &#8594;  Dense.
  - ***softmax*** activatation is used in the last layer to do a normalized probability distribution among multiple classes.
  - Data Labels
  
@@ -37,12 +47,6 @@ There is a urge necessity to use **Embedding Layer** in neural network to do tex
    7- Fire
    ````
  
-## NER-Python
-
- - An NER system using preposition to extract location from social media posts.
- - Uses NLTK library to get the **Parts of Speech** tags and identify place names on three steps.
- - All the POS tags along with a video tutorial can be found in this [link](https://pythonprogramming.net/natural-language-toolkit-nltk-part-speech-tagging/).
- - The program analyses the given String and look up different prepositions in order to find a valid location name
 
  
  
