@@ -1,5 +1,5 @@
-from nltk.tokenize import word_tokenize
 import nltk
+from nltk.tokenize import word_tokenize
 
 sentence = "Huge Jam from Banani to Gulshan"
 
@@ -8,7 +8,7 @@ words = word_tokenize(sentence)
 
 jam_place_integer = 0  # This will be needed for first and second phase
 jam_place2_integer = 0  # This will be needed for third phase
-jam_place3_integer = 0  # This will be needed for third phase because 'to' will have two places
+jam_place3_integer = 0  # This will be needed for third phase because 'to' will have two places. The before and after there will be two place names.
 enter_to_second_phase = 0
 enter_to_third_phase = 0
 enter_to_fourth_phase = 0

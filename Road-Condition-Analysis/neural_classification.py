@@ -1,26 +1,18 @@
-import numpy as np # linear algebra
-import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import numpy as np  # linear algebra
+import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
 import matplotlib.pyplot as plt
 from keras.callbacks import EarlyStopping
-from matplotlib import pyplot
-
-np.random.seed(32)
-
-from keras.layers import Dense, Input, Flatten, SpatialDropout1D, Conv1D, MaxPooling1D
-
+from keras.layers import SpatialDropout1D, Conv1D
 from sklearn.model_selection import train_test_split
-import numpy as np
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
-from keras.models import Model, Sequential
-from keras.layers import GRU, Input, Dense, TimeDistributed, Activation, RepeatVector,\
-    Bidirectional, Dropout, LSTM
+from keras.models import Sequential
+from keras.layers import Dense, LSTM
 from keras.layers.embeddings import Embedding
 from keras.optimizers import Adam
-import nltk
 from nltk.corpus import stopwords
 
-
+np.random.seed(32)
 
 # The maximum number of words to be used. (most frequent)
 MAX_NB_WORDS = 50000
@@ -32,6 +24,7 @@ EMBEDDING_DIM = 150
 epochs = 3
 batch_size = 64
 
+
 def get_stop_words():
     inputFile = open("custom_stop_words.txt", "r", encoding="utf-8")
 
@@ -39,8 +32,8 @@ def get_stop_words():
     for line in inputFile:
         word = line.split()
 
-        for i in range(0,len(word)):
-            if(word[i] not in word_list):
+        for i in range(0, len(word)):
+            if (word[i] not in word_list):
                 word_list.append(word[i])
             else:
                 pass
@@ -61,23 +54,17 @@ def load_data():
     dataset["data"] = dataset['data'].str.replace(pattern1, '')
     dataset["data"] = dataset['data'].str.replace(pattern2, '')
 
-
-
-
     tokenizer = Tokenizer(num_words=MAX_NB_WORDS, lower=True)
     tokenizer.fit_on_texts(dataset["data"].values)
     word_index = tokenizer.word_index
     print('Found %s unique tokens.' % len(word_index))
     print(word_index)
 
-
     dataset_x = tokenizer.texts_to_sequences(dataset["data"].values)
     dataset_x = pad_sequences(dataset_x, maxlen=MAX_SEQUENCE_LENGTH)
     dataset_y = pd.get_dummies(dataset["class"]).values
 
-
-    return dataset_x,dataset_y,tokenizer
-
+    return dataset_x, dataset_y, tokenizer
 
 
 def get_model(dataset_x):
@@ -89,6 +76,7 @@ def get_model(dataset_x):
     model.compile(loss='categorical_crossentropy', optimizer=Adam(0.005), metrics=['accuracy'])
 
     return model
+
 
 def simple_model(dataset_x):
     model = Sequential()
@@ -110,6 +98,7 @@ def predict_unknown(tokenizer):
     print(pred)
     print("Prediction class: ", labels[np.argmax(pred)])
 
+
 def plot_model():
     print(model.metrics_names)
     plt.plot(history.history['acc'], color="#1f77b4")
@@ -129,42 +118,29 @@ def plot_model():
     plt.show()
 
 
-dataset_x,dataset_y,tokenizer = load_data()
-X_train, X_test, Y_train, Y_test = train_test_split(dataset_x,dataset_y,
-                                                    test_size=0.25, random_state = 42, shuffle=True)
+dataset_x, dataset_y, tokenizer = load_data()
+X_train, X_test, Y_train, Y_test = train_test_split(dataset_x, dataset_y,
+                                                    test_size=0.25, random_state=42, shuffle=True)
 
 model = simple_model(dataset_x)
 history = model.fit(X_train, Y_train, epochs=epochs,
-                    batch_size=batch_size,validation_split=0.1,
+                    batch_size=batch_size, validation_split=0.1,
                     callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
 
-
-accr = model.evaluate(X_test,Y_test)
-print('Test set\n  Loss: {:0.3f}\n  Accuracy: {:0.3f}'.format(accr[0],accr[1]))
+accr = model.evaluate(X_test, Y_test)
+print('Test set\n  Loss: {:0.3f}\n  Accuracy: {:0.3f}'.format(accr[0], accr[1]))
 
 predict_unknown(tokenizer)
 
-
-
-
-
-
+# Test Sentences
 # আগপাড়ায় ভয়াবহ আগুন লেগেছে। এডিয়ে চলুন
 # কুড়িল রোডের অবস্থা কি কেউ বলতে পারেন?
 # কুড়িল রোডের অবস্থা কি কেউ বলতে পারেন?
 # কুড়িল রোডে ভয়াবহ যানজট। সবাই এড়িয়ে চলুন।
 
+# Data Labels
 # 1- Traffic Jam
 # 2- No Traffic Jam
 # 3- Road Condition
 # 6- Accident
 # 7- Fire
-
-
-
-
-
-
-
-
-
